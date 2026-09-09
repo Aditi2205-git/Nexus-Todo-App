@@ -1,13 +1,131 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>todo-app</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexus Tasks</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-grid"></div>
+
+    <main class="app-container">
+
+        <header class="app-header">
+            <div>
+                <p class="system-label">NEXUS // PRODUCTIVITY SYSTEM</p>
+                <h1>Nexus Tasks</h1>
+                <p class="subtitle">
+                    Organize your tasks. Track your progress.
+                </p>
+            </div>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                SYSTEM ONLINE
+            </div>
+        </header>
+
+
+        <section class="task-input-card">
+
+            <div class="input-wrapper">
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="Enter a new task..."
+                    maxlength="100"
+                >
+
+                <button id="addTaskBtn">
+                    + ADD TASK
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="dashboard">
+
+            <div class="stat-card">
+                <span class="stat-label">TOTAL</span>
+                <strong id="totalTasks">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">ACTIVE</span>
+                <strong id="activeTasks">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">COMPLETED</span>
+                <strong id="completedTasks">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">PROGRESS</span>
+                <strong id="progressPercent">0%</strong>
+            </div>
+
+        </section>
+
+
+        <section class="tasks-section">
+
+            <div class="section-header">
+
+                <h2>Task Queue</h2>
+
+                <div class="filters">
+
+                    <button class="filter active" data-filter="all">
+                        ALL
+                    </button>
+
+                    <button class="filter" data-filter="active">
+                        ACTIVE
+                    </button>
+
+                    <button class="filter" data-filter="completed">
+                        DONE
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <ul id="taskList"></ul>
+
+            <div id="emptyState" class="empty-state">
+
+                <div class="empty-icon">◇</div>
+
+                <h3>No tasks detected</h3>
+
+                <p>
+                    Add a task to initialize your productivity queue.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            <span>NEXUS TASK MANAGEMENT SYSTEM</span>
+            <span>LOCAL STORAGE ENABLED</span>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
 </html>
